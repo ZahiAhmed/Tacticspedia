@@ -21,4 +21,5 @@ This project will be implementing
 ## Implementation Timeline:
 - Friday - I will be setting up my project
 - Monday - I will be implementing logic for the sidebar and querying to find each icon
-- Tuesday - I will get to finish the 
+- Tuesday - I will implement the functionality of rendering data on click
+- Wednesday - I will
