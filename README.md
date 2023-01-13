@@ -16,7 +16,7 @@ In TFT Academy, users will be able to see stats on any unit they want and how ea
 
 ## Technologies and Libraries used
 This project will be implementing 
-- a json file to fetch data[https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json](https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json)
+- a json file to fetch data [https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json](https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json)
 - D3 api to render a graph
 - webpack and npm to bundle js files
 
@@ -26,4 +26,4 @@ This project will be implementing
 - Monday - Dedicate myself to add filtering logic and rendering a graph for the units stats
 - Tuesday - Add a new tab in nav bar to create an interactive grid that can allow for units to be placed on
 - Wednesday - Allow for grid to update statistics dynamically as units are put on it.
-- Thursday - Polish and push to git up and present.
+- Thursday - Polish and push to github and present.
