@@ -16,7 +16,7 @@ In TFT Academy, users will be able to see stats on any unit they want and intera
 
 ## Technologies and Libraries used
 This project will be implementing 
-- a json file [title](https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json)
+- a json file [https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json](https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json)
 - webpack
 - npm
 
