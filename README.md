@@ -16,9 +16,9 @@ In TFT Academy, users will be able to see stats on any unit they want and how ea
 
 ## Technologies and Libraries used
 This project will be implementing 
-- a json file [https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json](https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json)
-- webpack
-- npm
+- a json file to fetch data[https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json](https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json)
+- D3 api to render a graph
+- webpack and npm to bundle js files
 
 ## Implementation Timeline:
 - Friday - I will be setting up my project and dedicate myself to render a single units data throughout the page.
