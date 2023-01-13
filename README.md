@@ -21,8 +21,8 @@ This project will be implementing
 - webpack and npm to bundle js files
 
 ## Implementation Timeline:
-- Friday - I will be setting up my project and dedicate myself to render a single units data throughout the page.
-- Weekend - Implement sidebar to hold all units and change rendered data to whichever is clicked
+- Friday - I will be setting up my project and understanding how to use the apis and libraries im planning to use.
+- Weekend - Render a single units data throughout the page then implement a sidebar to hold all units and change rendered data to whichever is clicked
 - Monday - Dedicate myself to add filtering logic and rendering a graph for the units stats
 - Tuesday - Add a new tab in nav bar to create an interactive grid that can allow for units to be placed on
 - Wednesday - Allow for grid to update statistics dynamically as units are put on it.
