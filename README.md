@@ -6,7 +6,7 @@ A second tab will render an empty grid that will allow the user to place the uni
 ![alt text](Wireframe.jpg)
 
 ## Functionalities
-In TFT Academy, users will be able to see stats on any unit they want and interact with a chart to compare that unit with all the other units in the game. 
+In TFT Academy, users will be able to see stats on any unit they want and how each unit is compared to others via a chart. They will also be able to visualize any builds they would like via a team builder.
 - Click on a navbar
 - They can scroll through a sidebar of icons that represent units
 - The sidebar can be filtered and searched through
