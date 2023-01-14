@@ -8,7 +8,7 @@ body {
 
 .container {
     display: flex;
-    
+
 }
 
 #tab_bar{
@@ -18,11 +18,16 @@ body {
 
 #sidebar{
     position: sticky;
-    border: 3px solid $color
-
+    border: 3px solid $color;
+    max-width: 360px;
+    max-height: 300px;
+    // height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 #info {
+    margin-left: 30px;
     border: 3px solid $color
-
+    
 }

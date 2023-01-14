@@ -51,8 +51,13 @@ body {
 #sidebar {
   position: sticky;
   border: 3px solid purple;
+  max-width: 360px;
+  max-height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 #info {
+  margin-left: 30px;
   border: 3px solid purple;
 }
