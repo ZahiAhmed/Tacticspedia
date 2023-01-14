@@ -19,14 +19,14 @@ class Unit{
         document.querySelector(`#name`).innerText = `${this.name}`;
         document.querySelector(`#ability`).innerText = `${this.ability}`;
         document.querySelector(`#traits`).innerText = `${this.traits}`;
-        document.querySelector('#hp').innerText = `${this.hp}`;
-        document.querySelector('#armor').innerText = `${this.armor}`;
-        document.querySelector(`#magic_resist`).innerText = `${this.magicresist}`;
-        document.querySelector(`#mana`).innerText = `${this.startingmana}/${this.totalmana}`;
-        document.querySelector(`#ad`).innerText = `${this.attackdamage}`;
-        document.querySelector(`#as`).innerText = `${this.attackspeed}`;
-        document.querySelector(`#range`).innerText = `${this.range}`;
-        document.querySelector(`#cost`).innerText = `${this.cost}`;
+        document.querySelector('#hp').innerText = `HP: ${this.hp}`;
+        document.querySelector('#armor').innerText = `Armor: ${this.armor}`;
+        document.querySelector(`#magic_resist`).innerText = `Magic Resist: ${this.magicresist}`;
+        document.querySelector(`#mana`).innerText = `Mana: ${this.startingmana}/${this.totalmana}`;
+        document.querySelector(`#ad`).innerText = `AD: ${this.attackdamage}`;
+        document.querySelector(`#as`).innerText = `AS: ${this.attackspeed}`;
+        document.querySelector(`#range`).innerText = `Attack Range: ${this.range}`;
+        document.querySelector(`#cost`).innerText = `Cost: ${this.cost}`;
     }
 }
 export default Unit;
