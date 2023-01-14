@@ -1,13 +1,16 @@
 img {
     margin: 5px;
+    padding: 1px
+
 }
 
 img:hover {
+    border-bottom: solid black ;
     border-color: black
 }
 
 .cost1{
-    border: 3px solid gray
+    border: 3px solid gray;
 }
 
 .cost2{

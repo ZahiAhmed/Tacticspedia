@@ -8,9 +8,11 @@ h1 {
 
 img {
   margin: 5px;
+  padding: 1px;
 }
 
 img:hover {
+  border-bottom: solid black;
   border-color: black;
 }
 
@@ -35,11 +37,15 @@ img:hover {
 }
 
 body {
-  background-color: rgb(250, 154, 154);
+  background-color: thistle;
+}
+
+.container {
+  display: flex;
 }
 
 #tab_bar {
-  color: rgba(255, 217, 0, 0.621);
+  color: rgb(205, 176, 11);
 }
 
 #sidebar {

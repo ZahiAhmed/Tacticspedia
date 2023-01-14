@@ -3,11 +3,17 @@
 @import "./styles/icon.scss";
 
 body {
-    background-color: rgb(250, 154, 154);
+    background-color: thistle
+}
+
+.container {
+    display: flex;
+    
 }
 
 #tab_bar{
-    color: rgba(255, 217, 0, 0.621);
+    color: rgb(205, 176, 11);
+    // color: 
 }
 
 #sidebar{
