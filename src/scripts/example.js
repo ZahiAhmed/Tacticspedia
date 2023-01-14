@@ -8,7 +8,7 @@ class Example{
 
     handleClick(e) {
         e.preventDefault();
-        this.ele.children[0].innerText = '...in develpoment'
+        this.ele.children[0].innerText = '...in development'
     }
 }
 

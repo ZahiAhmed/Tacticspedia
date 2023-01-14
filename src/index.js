@@ -1,4 +1,6 @@
 import Example from './scripts/example';
+import Unit from './scripts/unit';
+import Icon from './scripts/icon'
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.querySelector('#root');
     new Example(root);
@@ -9,21 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
     })
     .then(function (data) {
-        let units = data.sets[8].champions.slice(0,-4);
+        const units = data.sets[8].champions.slice(0,-4);
         console.log(units);
-        units = units.sort((a,b) => {
-            if(a.name<b.name) return -1
-            return 1;
-        });
-        // units = units.sort();
         for(let i = 0; i<units.length; i++) {
-            const li = document.createElement('li');
-            const icon = document.createElement("img");
-            icon.setAttribute  ("src", `https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-hero-augment/${units[i].icon.slice(31,-3)}png`);
-            li.innerHTML = `<a> ${units[i].name} </a>`
-            li.append(icon);
-            root.append(li);
+            const champ = new Unit(units[i]);
+            console.log(champ);
+            if(champ.name !== "Volcanic Sol" && 
+            champ.name !== "Giant Crabgot" && 
+            champ.name !== "Hackerim" &&
+            champ.name !== "Mutant Zac"){
+                const unitIcon = new Icon(champ, 50, 50);
+                root.append(unitIcon.ele);
+            }
         }
-    });
+    })
 })
 
