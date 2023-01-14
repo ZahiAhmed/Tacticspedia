@@ -1,5 +1,22 @@
 @import "./styles/example.scss";
+@import "./styles/sidebar.scss";
+@import "./styles/icon.scss";
 
-#root {
-    color: $color;
+body {
+    background-color: rgb(250, 154, 154);
+}
+
+#tab_bar{
+    color: rgba(255, 217, 0, 0.621);
+}
+
+#sidebar{
+    position: sticky;
+    border: 3px solid $color
+
+}
+
+#info {
+    border: 3px solid $color
+
 }
