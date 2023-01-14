@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(function (data) {
         const units = data.sets[8].champions.slice(0,-4);
-        console.log(units);
+        console.log(data);
         for(let i = 0; i<units.length; i++) {
             const champ = new Unit(units[i]);
             console.log(champ);

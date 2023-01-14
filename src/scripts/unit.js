@@ -1,6 +1,6 @@
 class Unit{
     constructor(data){
-        this.ability = data.ability.desc;
+        this.ability = data.ability.desc; //abilities have name & icon too
         this.cost = data.cost;
         this.icon = data.icon.slice(31,-3);
         this.name = data.name;
