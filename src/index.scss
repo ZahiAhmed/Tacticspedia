@@ -19,7 +19,7 @@ body {
 #sidebar{
     position: sticky;
     border: 3px solid $color;
-    max-width: 360px;
+    width: 360px;
     max-height: 300px;
     // height: 300px;
     overflow: scroll;
@@ -27,7 +27,9 @@ body {
 }
 
 #info {
-    margin-left: 30px;
-    border: 3px solid $color
+    margin-right: 30px;
+    border: 3px solid $color;
+    width: 500px;
+    max-width: 500px;
     
-}
+};
