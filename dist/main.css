@@ -36,10 +36,8 @@ h1 {
 }
 
 .search {
-  width: 340px;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
+  width: 365px;
+  height: 30px;
 }
 
 body {
@@ -54,7 +52,7 @@ body {
   color: rgb(205, 176, 11);
 }
 
-.sidebar {
+.champs {
   border: 3px solid purple;
   width: 360px;
   height: 300px;
@@ -75,7 +73,8 @@ body {
 }
 
 .ability {
-  height: 200px;
+  height: 250px;
+  padding-left: 10px;
 }
 
 .info-container {
@@ -83,6 +82,7 @@ body {
   justify-content: space-between;
   font-weight: bolder;
   font-size: small;
+  padding-left: 10px;
 }
 
 .stats-container {

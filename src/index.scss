@@ -15,7 +15,7 @@ body {
     color: rgb(205, 176, 11);
 }
 
-.sidebar{
+.champs{
     border: 3px solid $color;
     width: 360px;
     height: 300px;
@@ -36,7 +36,8 @@ body {
 }
 
 .ability {
-    height: 200px;
+    height: 250px;
+    padding-left: 10px;
 }
 
 .info-container{
@@ -44,6 +45,7 @@ body {
     justify-content: space-between;
     font-weight: bolder;
     font-size: small;
+    padding-left: 10px;
 }
 
 .stats-container{
@@ -59,5 +61,7 @@ body {
 #name{
     font-size: xx-large;
 }
+
+
 
 

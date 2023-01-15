@@ -4,7 +4,6 @@
 }
 
 .sidebar img:hover {
-    // border-color: black;
     box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -29,8 +28,6 @@
 }
 
 .search {
-    width: 340px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
+    width: 365px;
+    height: 30px;
 }
