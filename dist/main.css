@@ -6,13 +6,12 @@ h1 {
   padding: 20px;
 }
 
-img {
+.sidebar img {
   margin: 5px;
   padding: 1px;
 }
 
-img:hover {
-  border-bottom: solid black;
+.sidebar img:hover {
   border-color: black;
 }
 
@@ -33,7 +32,7 @@ img:hover {
 }
 
 .cost5 {
-  border: 3px solid gold;
+  border: 3px solid goldenrod;
 }
 
 .search {
@@ -55,7 +54,7 @@ body {
   color: rgb(205, 176, 11);
 }
 
-#sidebar {
+.sidebar {
   border: 3px solid purple;
   width: 360px;
   height: 300px;
@@ -68,4 +67,14 @@ body {
   border: 3px solid purple;
   width: 500px;
   max-width: 500px;
+  font: menu;
+}
+
+.ability {
+  height: 100px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
 }

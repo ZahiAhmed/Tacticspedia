@@ -13,10 +13,9 @@ body {
 
 #tab_bar{
     color: rgb(205, 176, 11);
-    // color: 
 }
 
-#sidebar{
+.sidebar{
     border: 3px solid $color;
     width: 360px;
     height: 300px;
@@ -29,4 +28,17 @@ body {
     border: 3px solid $color;
     width: 500px;
     max-width: 500px;
+    font: menu;
 }
+
+.ability {
+    height: 100px;
+}
+
+.info-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+

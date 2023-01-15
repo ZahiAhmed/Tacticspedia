@@ -1,11 +1,9 @@
-img {
+.sidebar img {
     margin: 5px;
-    padding: 1px
-
+    padding: 1px;
 }
 
-img:hover {
-    border-bottom: solid black ;
+.sidebar img:hover {
     border-color: black
 }
 
@@ -14,19 +12,19 @@ img:hover {
 }
 
 .cost2{
-    border: 3px solid green
+    border: 3px solid green;
 }
 
 .cost3{
-    border: 3px solid blue
+    border: 3px solid blue;
 }
 
 .cost4{
-    border: 3px solid magenta
+    border: 3px solid magenta;
 }
 
 .cost5{
-    border: 3px solid gold
+    border: 3px solid goldenrod;
 }
 
 .search {
@@ -35,7 +33,3 @@ img:hover {
     position: -webkit-sticky;
     top: 0;
 }
-
-
-
-

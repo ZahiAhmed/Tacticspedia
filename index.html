@@ -14,19 +14,28 @@
     <div id="tab_bar"></div>
     <div class="container">
       <div id="info">
-        <li id="name">Name</li>
-        <li id="cost">Cost: </li>
-        <li id="traits">Traits</li>
-        <li id="ability">Ability</li>
-        <li id="hp">HP: </li>
-        <li id="armor">Armor: </li>
-        <li id="magic_resist">Magic Resist: </li>
-        <li id="mana">Mana: </li>
-        <li id="ad">AD: </li>
-        <li id="as">AS: </li>
-        <li id="range">Attack Range: </li>
+          <div class="info-container">
+            <div class="basic-info">
+              <br>
+              <br>
+              <p id="name">Name</p>
+              <p id="cost">Cost: </p>
+              <p id="traits">Traits:</p>
+            </div>
+            <p id="splash"></p>
+            </div>
+        <div class="ability">
+          <p id="ability">Ability</p>
+        </div>
+        <p id="hp">HP: </p>
+        <p id="armor">Armor: </p>
+        <p id="magic_resist">Magic Resist: </p>
+        <p id="mana">Mana: </p>
+        <p id="ad">AD: </p>
+        <p id="as">AS: </p>
+        <p id="range">Attack Range: </p>
       </div>
-      <div id="sidebar">
+      <div class="sidebar">
         <input class="search" id="searchChamp" type="search" placeholder="Search Unit">
         <p id="champ_list"></p>
       </div>

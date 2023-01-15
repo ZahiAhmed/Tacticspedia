@@ -4,7 +4,7 @@ class Icon {
         this.ele = document.createElement("img");
         this.ele.setAttribute("class", `cost${champ.cost}`)
         this.ele.setAttribute("src", 
-        `https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-hero-augment/${champ.icon}png`);
+        `https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-hero-augment/${champ.icon}`);
         if (this.champ.name === "Wukong") {
             this.ele.setAttribute("src", 
             `https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-hero-augment/TFT8_Wukong.TFT_Set8.png`)
