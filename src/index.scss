@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
 }
 
-#info {
+.info {
     margin-right: 30px;
     border: 3px solid $color;
     width: 500px;
@@ -31,18 +31,33 @@ body {
     font: menu;
 }
 
+.info img{
+    margin: 10px;
+}
+
 .ability {
-    height: 100px;
+    height: 200px;
 }
 
 .info-container{
     display: flex;
     justify-content: space-between;
+    font-weight: bolder;
+    font-size: small;
 }
 
 .stats-container{
     display: flex;
     justify-content: space-evenly;
+}
+
+#ability {
+    font-weight: bolder;
+    font-size: medium;
+}
+
+#name{
+    font-size: xx-large;
 }
 
 

@@ -1,6 +1,6 @@
 class Unit{
     constructor(data){
-        this.ability = data.ability.desc; //abilities have name & icon too
+        this.ability = data.ability; //abilities have name & icon too
         this.cost = data.cost;
         this.icon = `${data.icon.slice(31,-3)}png`;
         this.name = data.name;
@@ -18,8 +18,9 @@ class Unit{
     printData(){
         document.querySelector(`#splash`).innerHTML = `<img class="cost${this.cost}" src="https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-champion/${this.icon}">`;
         document.querySelector(`#name`).innerText = `${this.name}`;
-        document.querySelector(`#ability`).innerText = `Ability: ${this.ability}`;
-        document.querySelector(`#traits`).innerText = `Traits: ${this.traits.join(", ")}`;
+        document.querySelector(`#ability`).innerText = `${this.ability.name}`;
+        document.querySelector(`#ability-desc`).innerText = `${this.ability.desc}`;
+        document.querySelector(`#traits`).innerText = `${this.traits.join(", ")}`;
         document.querySelector('#hp').innerText = `HP: ${this.hp}`;
         document.querySelector('#armor').innerText = `Armor: ${this.armor}`;
         document.querySelector(`#magic_resist`).innerText = `Magic Resist: ${this.magicresist}`;
