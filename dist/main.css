@@ -78,3 +78,8 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.stats-container {
+  display: flex;
+  justify-content: space-evenly;
+}
