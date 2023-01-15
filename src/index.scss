@@ -16,16 +16,17 @@ body {
 }
 
 .champs{
-    border: 3px solid $color;
+    border: 1px solid $color;
     width: 360px;
     height: 300px;
     overflow: scroll;
     overflow-x: hidden;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .info {
     margin-right: 30px;
-    border: 3px solid $color;
+    border: 1px solid $color;
     width: 500px;
     max-width: 500px;
     font: menu;
