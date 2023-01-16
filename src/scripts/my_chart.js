@@ -66,12 +66,17 @@ class MyChart{
             data: {
                 labels: labels.names,
                 datasets:[{
+                    label: stat,
+                    categoryPercentage: 1,
+                    hoverBackgroundColor: 'red',
+                    hoverBorderColor: 'goldenrod',
+                    borderWidth: 2,
                     data: this.data,
                     backgroundColor: new Array(59).fill('blue'),
                 }]    
             },
             options: {
-                indexAxis: 'y'
+                indexAxis: 'y',
             }
         });
 
