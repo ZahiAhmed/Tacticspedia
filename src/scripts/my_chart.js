@@ -28,7 +28,8 @@ class MyChart{
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value)
     }
 
-    filterChamps(costs = [1,2,3,4,5]){
+    filterChamps(costs=[1,2,3,4,5]){
+        if (!costs[0]) costs = [1,2,3,4,5];
         const invalidUnits = ["Volcanic Sol", "Giant Crabgot", "Hackerim", "Mutant Zac"];
         this.champs = [];
         for(let i = 0; i<this.units.length; i++) {
