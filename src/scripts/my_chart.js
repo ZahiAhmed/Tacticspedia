@@ -8,8 +8,18 @@ class MyChart{
         this.filterChamps();
         this.ele = document.getElementById('chart');
         this.dropdown = document.querySelector("#dropdown")
+        this.costdropdown = document.querySelector("#cost-dropdown");
         this.handleDropdown = this.handleDropdown.bind(this);
+        this.handleCost = this.handleCost.bind(this);
         this.dropdown.addEventListener('change', this.handleDropdown);
+        this.costdropdown.addEventListener('change', this.handleCost);
+    }
+
+    handleCost(e){
+        e.preventDefault();
+        this.filterChamps([parseInt(this.costdropdown.options[this.costdropdown.selectedIndex].value)]);
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
+        this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
     }
 
     handleDropdown(e){
@@ -18,23 +28,21 @@ class MyChart{
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value)
     }
 
-    filterChamps(){
+    filterChamps(costs = [1,2,3,4,5]){
         const invalidUnits = ["Volcanic Sol", "Giant Crabgot", "Hackerim", "Mutant Zac"];
         this.champs = [];
         for(let i = 0; i<this.units.length; i++) {
             const champ = new Unit(this.units[i]);
-            if(!invalidUnits.includes(champ.name)){
+            if(!invalidUnits.includes(champ.name) && (costs.includes(champ.cost))){
                 this.champs.push(champ);
             }
         }
     }
 
-    makeIcons(){
+    makeLabels(){
         const labels = {};
-        const icons = [];
-        const names = [];
-        labels.icons = icons;
-        labels.names = names;
+        labels.icons = [];
+        labels.names = [];
         for(let i = 0; i<this.champs.length; i++){
             const unitIcon = new Icon(this.champs[i], 25, 25);
             labels.icons.push(unitIcon.ele);
@@ -51,7 +59,7 @@ class MyChart{
         if (stat === "Attack Damage") this.adChart();
         if (stat === "Attack Speed") this.asChart();
         if (stat === "Attack Range") this.rangeChart();
-        const labels = this.makeIcons();
+        const labels = this.makeLabels();
         this.chart = new Chart(this.ele.getContext('2d'), {
             type: 'bar',
             data: {
@@ -62,13 +70,7 @@ class MyChart{
                 }]    
             },
             options: {
-                indexAxis: 'y',
-                elements: {
-                    bar: {
-                      borderWidth: 0,
-                      borderColor: 'blue'
-                    }
-                  },
+                indexAxis: 'y'
             }
         });
 

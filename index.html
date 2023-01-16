@@ -13,33 +13,33 @@
   <body>
     <div id="tab_bar"></div>
     <div class="container">
+      <div class="sidebar">
+        <input class="search" id="searchChamp" type="search" placeholder="Search Unit">
+      <div class="champs">
+        <p id="champ_list"></p>
+      </div>
+    </div>
       <div class="info">
         <div class="info-container">
           <div class="basic-info">
-            <p id="name">Name</p>
-            <p id="cost">Cost: </p>
-            <p id="traits">Traits:</p>
+            <p id="name"></p>
+            <p id="cost"></p>
+            <p id="traits"></p>
           </div>
           <p id="splash"></p>
         </div>
         <div class="stats-container">
-          <p id="hp">HP: </p>
-          <p id="armor">Armor: </p>
-          <p id="magic_resist">Magic Resist: </p>
-          <p id="ad">AD: </p>
-          <p id="as">AS: </p>
-          <p id="range">Attack Range: </p>
+          <p id="hp"></p>
+          <p id="armor"></p>
+          <p id="magic_resist"></p>
+          <p id="ad"></p>
+          <p id="as"></p>
+          <p id="range"></p>
         </div>
         <div class="ability">
-          <p id="ability">Ability</p>
+          <p id="ability"></p>
           <p id="mana"></p>
           <p id="ability-desc"></p>
-        </div>
-      </div>
-      <div class="sidebar">
-          <input class="search" id="searchChamp" type="search" placeholder="Search Unit">
-        <div class="champs">
-          <p id="champ_list"></p>
         </div>
       </div>
     </div>
@@ -56,6 +56,16 @@
         <option value="Attack Speed">Attack Speed</option>
         <option value="Attack Range">Attack Range</option>
       </select>
+      <select name="Cost" id="cost-dropdown">
+        <option selected disabled>Cost</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <br>
       <canvas id="chart"></canvas>
     </div>
   </body>
