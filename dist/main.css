@@ -101,3 +101,8 @@ body {
 #name {
   font-size: xx-large;
 }
+
+canvas {
+  width: 1000px;
+  max-width: 1000px;
+}

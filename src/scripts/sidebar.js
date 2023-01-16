@@ -3,8 +3,9 @@ import Icon from './icon';
 
 class Sidebar{
     constructor(units){
-        this.units = units;
+        this.units = units
         this.ele = document.querySelector("#champ_list")
+        this.units
         this.listIcons();
         this.search = document.getElementById("searchChamp");
         this.handleSearch = this.handleSearch.bind(this);
@@ -16,9 +17,6 @@ class Sidebar{
         this.listIcons(this.search.value.toLowerCase());
     }
 
-    sort(){
-    }
-
     listIcons(str=""){
         const invalidUnits = ["Volcanic Sol", "Giant Crabgot", "Hackerim", "Mutant Zac"];
         this.champs = [];
@@ -27,11 +25,20 @@ class Sidebar{
             const champ = new Unit(this.units[i]);
             if(!invalidUnits.includes(champ.name) && (champ.name.toLowerCase().includes(str))){
                 this.champs.push(champ);
-                const unitIcon = new Icon(champ, 50, 50);
-                this.ele.append(unitIcon.ele);
             }
         }
+        this.sort();
+    }
 
+    sort(){
+        this.champs.sort(function(x,y) {
+            if (x.name < y.name) return -1;
+            return 1;
+        });
+        for(let i = 0; i<this.champs.length; i++) {
+            const unitIcon = new Icon(this.champs[i], 50, 50);
+            this.ele.append(unitIcon.ele);
+        }
     }
 }
 

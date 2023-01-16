@@ -23,6 +23,8 @@
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.2",
+    "canvas": "^2.11.0",
+    "chart.js": "^4.1.2",
     "core-js": "^3.27.1",
     "css-loader": "^6.7.3",
     "mini-css-extract-plugin": "^2.7.2",

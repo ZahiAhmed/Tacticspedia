@@ -1,5 +1,6 @@
 import Example from './scripts/example';
 import Sidebar from './scripts/sidebar';
+import MyChart from './scripts/my_chart';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.querySelector('#tab_bar');
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const units = data.sets[8].champions.slice(0,-4);
         console.log(data);
         const champList = new Sidebar(units);
+        const statsChart = new MyChart(units);
     })
 })
 
