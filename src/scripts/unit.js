@@ -1,3 +1,5 @@
+import { Chart } from "chart.js";
+
 class Unit{
     constructor(data){
         this.ability = data.ability; //abilities have name & icon too
@@ -29,6 +31,22 @@ class Unit{
         document.querySelector(`#as`).innerText = `AS: ${this.attackspeed}`;
         document.querySelector(`#range`).innerText = `Attack Range: ${this.range}`;
         document.querySelector(`#cost`).innerText = `Cost: ${this.cost}`;
+        this.printGraph(document.querySelector('#info-graph'));
     }
+
+    printGraph(canvas){
+        if (canvas.chart) canvas.chart.destroy();
+        canvas.chart = new Chart(canvas.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["HP", "Armor", "MR", "AD", "AS", "Range"],
+                datasets: [{
+                    data: [this.hp, this.armor, this.magicresist, this.attackdamage, this.attackspeed, this.range],
+                    backgroundColor: ['green', 'orange', 'purple', 'red', 'yellow', 'blue']
+                }]
+            }
+        })
+    }
+
 }
 export default Unit;

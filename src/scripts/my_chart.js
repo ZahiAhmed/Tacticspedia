@@ -7,6 +7,7 @@ class MyChart{
         this.units = units;
         this.filterChamps();
         this.ele = document.getElementById('chart');
+        this.showChart();
         this.dropdown = document.querySelector("#dropdown")
         this.costdropdown = document.querySelector("#cost-dropdown");
         this.handleDropdown = this.handleDropdown.bind(this);
@@ -25,6 +26,7 @@ class MyChart{
     handleDropdown(e){
         e.preventDefault();
         this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
+        this.ele.style.visibility = "visible";
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value)
     }
 
@@ -45,7 +47,7 @@ class MyChart{
         labels.icons = [];
         labels.names = [];
         for(let i = 0; i<this.champs.length; i++){
-            const unitIcon = new Icon(this.champs[i], 25, 25);
+            const unitIcon = new Icon(this.champs[i], 1, 1);
             labels.icons.push(unitIcon.ele);
             labels.names.push(unitIcon.champ.name);
         }
@@ -61,8 +63,24 @@ class MyChart{
         if (stat === "Attack Speed") this.asChart();
         if (stat === "Attack Range") this.rangeChart();
         const labels = this.makeLabels();
+        this.ele.height = labels.names.length *15;
+        console.log(labels.icons);
         this.chart = new Chart(this.ele.getContext('2d'), {
             type: 'bar',
+            plugins: [{
+                afterDraw: function(chart) {
+                    const ctx = chart.ctx;
+                    const xAxis = chart.scales.x;
+                    const yAxis = chart.scales.y;
+                    yAxis.ticks.forEach((value, index) => {
+                        const x = xAxis.left;
+                        const y = yAxis.getPixelForTick(index);
+                        const width = 35;
+                        const height = 35;
+                        ctx.drawImage(labels.icons[index], x-40, y-18, width, height);
+                    });
+                }
+            }],
             data: {
                 labels: labels.names,
                 datasets:[{
@@ -70,18 +88,36 @@ class MyChart{
                     categoryPercentage: 1,
                     hoverBackgroundColor: 'red',
                     hoverBorderColor: 'goldenrod',
-                    borderWidth: 2,
+                    borderWidth: 5,
                     data: this.data,
-                    backgroundColor: new Array(59).fill('blue'),
+                    backgroundColor: 'blue',
                 }]    
             },
             options: {
                 indexAxis: 'y',
+                scales: {
+                    alignToPixels: true,
+                    y:{
+                        gridLines: {
+                            drawBorder: false,
+                            tickMarkLength: 20,
+                            lineWidth: 20
+                        },
+                        ticks:{
+                            // labelOffset: -25,
+                            maxTicksLimit: 59,
+                            autoSkip: false,
+                            padding: 30
+                        },
+                        grid: {
+                            tickLength: 20
+                        }
+                    },
+                },
             }
         });
-
-
     }
+
 
     hpChart(){
         this.data = [];

@@ -63,10 +63,10 @@ body {
     font-size: xx-large;
 }
 
-canvas {
+#chart {
     width: 1000px;
     max-width: 1000px;
+    visibility: hidden;
+    // padding: 50px;
 }
-
-
 
