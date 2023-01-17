@@ -64,7 +64,6 @@ class MyChart{
         if (stat === "Attack Range") this.rangeChart();
         const labels = this.makeLabels();
         this.ele.height = labels.names.length *15;
-        console.log(labels.icons);
         this.chart = new Chart(this.ele.getContext('2d'), {
             type: 'bar',
             plugins: [{
@@ -77,7 +76,7 @@ class MyChart{
                         const y = yAxis.getPixelForTick(index);
                         const width = 35;
                         const height = 35;
-                        ctx.drawImage(labels.icons[index], x-40, y-18, width, height);
+                        ctx.drawImage(labels.icons[index], x-50, y-18, width, height);
                     });
                 }
             }],
@@ -96,21 +95,17 @@ class MyChart{
             options: {
                 indexAxis: 'y',
                 scales: {
-                    alignToPixels: true,
                     y:{
                         gridLines: {
                             drawBorder: false,
-                            tickMarkLength: 20,
-                            lineWidth: 20
                         },
                         ticks:{
-                            // labelOffset: -25,
                             maxTicksLimit: 59,
                             autoSkip: false,
                             padding: 30
                         },
                         grid: {
-                            tickLength: 20
+                            tickLength: 30
                         }
                     },
                 },
