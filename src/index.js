@@ -1,7 +1,7 @@
 import Example from './scripts/example';
 import ScrollBar from './scripts/scrollbar';
 import MyChart from './scripts/my_chart';
-// import Sidebar from './scrips/Sidebar'
+import Sidebar from './scripts/sidebar'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.querySelector('#tab_bar');
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(function (data) {
         const units = data.sets[8].champions.slice(0,-4);
         const traits = data.sets[8].traits;
-        console.log(data);
+        console.log(traits);
         new ScrollBar(units);
         new MyChart(units);
-        // const Sidebar(traits); // make sidebar
+        new Sidebar(traits, units); // make sidebar
     })
 })
 

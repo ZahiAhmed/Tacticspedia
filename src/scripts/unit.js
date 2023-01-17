@@ -3,6 +3,7 @@ import { Chart } from "chart.js";
 class Unit{
     constructor(data){
         this.ability = data.ability; //abilities have variables & icon too
+        // this.parseAbility();
         this.cost = data.cost;
         this.icon = `${data.icon.slice(31,-3)}png`;
         this.name = data.name;
@@ -16,7 +17,6 @@ class Unit{
         this.totalmana = Math.round(100*data.stats.mana)/100;
         this.range = Math.round(100*data.stats.range)/100;
         this.traits = data.traits;
-        console.log(this.ability.icon);
     }
     printData(){
         document.querySelector(`#splash`).innerHTML = `<img class="cost${this.cost}" src="https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-champion/${this.icon}">`;
@@ -37,6 +37,7 @@ class Unit{
 
     printGraph(canvas){
         if (canvas.chart) canvas.chart.destroy();
+        const that = this;
         canvas.chart = new Chart(canvas.getContext('2d'), {
             type: 'bar',
             data: {
@@ -52,6 +53,18 @@ class Unit{
             },
             options: {
                 plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                if (context.parsed.x === 0) return that.hp ;
+                                if (context.parsed.x === 1) return that.armor;
+                                if (context.parsed.x === 2)return that.magicresist;
+                                if (context.parsed.x === 3)return that.attackdamage;
+                                if (context.parsed.x === 4)return that.attackspeed;
+                                if (context.parsed.x === 5)return that.range;
+                            }
+                        }
+                    },
                     legend: {
                         display: false
                     }
@@ -74,6 +87,20 @@ class Unit{
             }
         })
     }
+
+    // parseAbility(){
+    //     const desc = this.ability.desc.split("@");
+    //     const values = this.ability.variables;
+    //     desc.forEach(str => {
+    //         debugger
+    //         str = str.split("*");
+    //         for(let i = 0; i<values.length; i++) {
+    //             if(str[0] === values[i].name || str[0]==='Modified'+values[i].name)
+    //                 str = values[i].value.join("/");
+    //         }
+    //     });
+    //     console.log(desc.join(""));
+    // }
 
 }
 export default Unit;

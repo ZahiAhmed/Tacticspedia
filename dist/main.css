@@ -1,7 +1,7 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
-h1 {
+#tab_bar {
   border: 4px solid purple;
   padding: 20px;
 }
@@ -13,6 +13,7 @@ h1 {
 
 .scrollbar img:hover {
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .cost1 {
@@ -48,10 +49,25 @@ body {
 
 .container {
   display: flex;
+  justify-content: center;
+  padding-right: 15%;
+}
+
+#monsters {
+  text-align: center;
+  background-color: rgb(218, 32, 97);
+}
+
+#monsters h2 {
+  font-size: x-large;
+  font-weight: bolder;
+  color: goldenrod;
+  padding-right: 15%;
 }
 
 #tab_bar {
   color: rgb(205, 176, 11);
+  background-color: cornflowerblue;
 }
 
 .champs {
@@ -114,4 +130,76 @@ body {
   height: 30px;
   border: 1px solid purple;
   background-color: hotpink;
+}
+
+.drop:hover {
+  cursor: pointer;
+}
+
+.stats-chart {
+  padding-left: 15%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 2px;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 30px;
+  text-align: center;
+  font: menu;
+  background-color: plum;
+  border: 2px solid blue;
+}
+
+.sidebar p {
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: small;
+}
+
+.sidebar label {
+  background-color: rgba(173, 51, 173, 0.658);
+  font-weight: 1000;
+  font-size: large;
+}
+
+.sidebar h2 {
+  font-size: x-large;
+  border: 1px solid purple;
+  background-color: rgb(218, 32, 97);
+}
+
+.sidebar div > div {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: cornflowerblue;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  height: 120%;
+  border: 1px solid purple;
+}
+
+.sidebar #header {
+  padding-bottom: 5%;
+  color: cornflowerblue;
+  font-size: larger;
+}
+
+.sidebar img {
+  cursor: pointer;
+}
+
+#searchTrait {
+  bottom: 10%;
+  width: 300px;
+  height: 30px;
+  margin-bottom: 5px;
+  border: 1px solid purple;
 }

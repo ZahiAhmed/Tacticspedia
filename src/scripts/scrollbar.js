@@ -5,8 +5,8 @@ class ScrollBar{
     constructor(units){
         this.units = units
         this.ele = document.querySelector("#champ_list")
-        this.units
         this.listIcons();
+        this.champs[Math.floor(Math.random()* 59)].printData();
         this.search = document.getElementById("searchChamp");
         this.handleSearch = this.handleSearch.bind(this);
         this.search.addEventListener("keyup", this.handleSearch)
