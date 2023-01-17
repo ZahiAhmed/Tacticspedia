@@ -19,11 +19,11 @@ body {
 }
 
 #monsters h2{
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: bolder;
     color: goldenrod;
     padding-right: 15%;
-    
+
 }
 
 #tab_bar{
@@ -114,7 +114,8 @@ body {
     text-align: center;
     font: menu;
     background-color: plum;
-    border: 2px solid blue;
+    // border: 2px solid blue;
+    box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar p{
