@@ -8,24 +8,33 @@ class MyChart{
         this.filterChamps();
         this.ele = document.getElementById('chart');
         this.showChart();
+        this.sortbutton = document.querySelector("#sort-button");
         this.dropdown = document.querySelector("#dropdown")
         this.costdropdown = document.querySelector("#cost-dropdown");
+        this.handleSort = this.handleSort.bind(this);
         this.handleDropdown = this.handleDropdown.bind(this);
         this.handleCost = this.handleCost.bind(this);
+        this.sortbutton.addEventListener('change', this.handleSort);
         this.dropdown.addEventListener('change', this.handleDropdown);
         this.costdropdown.addEventListener('change', this.handleCost);
+    }
+
+    handleSort(e){
+        e.preventDefault();
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value, parseInt(this.sortbutton.options[this.sortbutton.selectedIndex].value))
+        this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
     }
 
     handleCost(e){
         e.preventDefault();
         this.filterChamps([parseInt(this.costdropdown.options[this.costdropdown.selectedIndex].value)]);
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value, parseInt(this.sortbutton.options[this.sortbutton.selectedIndex].value));
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
     }
 
     handleDropdown(e){
         e.preventDefault();
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value, parseInt(this.sortbutton.options[this.sortbutton.selectedIndex].value));
         this.ele.style.visibility = "visible";
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value)
     }
@@ -76,6 +85,7 @@ class MyChart{
                         const y = yAxis.getPixelForTick(index);
                         const width = 35;
                         const height = 35;
+                        // debugger
                         ctx.drawImage(labels.icons[index], x-50, y-18, width, height);
                     });
                 }
@@ -158,54 +168,55 @@ class MyChart{
 
 
 
-    sort(stat){
-        if (stat === "HP") this.sortbyHP();
-        if (stat === "Armor") this.sortbyArmor();
-        if (stat === "Magic Resist") this.sortbyMR();
-        if (stat === "Attack Damage") this.sortbyAD();
-        if (stat === "Attack Speed") this.sortbyAS();
-        if (stat === "Attack Range") this.sortbyRange();
+    sort(stat,n){
+        if (stat === "HP") this.sortbyHP(n);
+        if (stat === "Armor") this.sortbyArmor(n);
+        if (stat === "Magic Resist") this.sortbyMR(n);
+        if (stat === "Attack Damage") this.sortbyAD(n);
+        if (stat === "Attack Speed") this.sortbyAS(n);
+        if (stat === "Attack Range") this.sortbyRange(n);
     }
 
-    sortbyHP(){
+    sortbyHP(n=1){
         this.champs = this.champs.sort(function(x,y) {
-            if (x.hp < y.hp) return 1;
-            return -1;
+            if (x.hp < y.hp) return 1*n;
+            return -1*n;
         });
     }
 
-    sortbyArmor(){
+    sortbyArmor(n=1){
         this.champs = this.champs.sort(function(x,y) {
-            if (x.armor < y.armor) return 1;
-            return -1;
+            if (x.armor < y.armor) return 1*n;
+            return -1*n;
         });
     }
 
-    sortbyMR(){
+    sortbyMR(n=1){ 
         this.champs = this.champs.sort(function(x,y) {
-            if (x.magicresist < y.magicresist) return 1;
-            return -1;
+            if (x.magicresist < y.magicresist) return 1*n;
+            return -1*n;
         });
     }
 
-    sortbyAD(){
+    sortbyAD(n=1){
         this.champs = this.champs.sort(function(x,y) {
-            if (x.attackdamage < y.attackdamage) return 1;
-            return -1;
+            if (x.attackdamage < y.attackdamage) return 1*n;
+            return -1*n;
         });
     }
 
-    sortbyAS(){
+    sortbyAS(n=1){
         this.champs = this.champs.sort(function(x,y) {
-            if (x.attackspeed < y.attackspeed) return 1;
-            return -1;
+            if (x.attackspeed < y.attackspeed) return 1*n;
+            return -1*n;
         });
     }
 
-    sortbyRange(){
+    sortbyRange(n=1){
+        
         this.champs = this.champs.sort(function(x,y) {
-            if (x.range < y.range) return 1;
-            return -1;
+            if (x.range < y.range) return 1*n;
+            return -1*n;
         });
     }
 

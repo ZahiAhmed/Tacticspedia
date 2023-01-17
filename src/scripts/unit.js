@@ -40,10 +40,33 @@ class Unit{
             type: 'bar',
             data: {
                 labels: ["HP", "Armor", "MR", "AD", "AS", "Range"],
+
                 datasets: [{
-                    data: [this.hp, this.armor, this.magicresist, this.attackdamage, this.attackspeed, this.range],
+                    data: [Math.round(this.hp/334.25), Math.round(this.armor/17.5), Math.round(this.magicresist/17.5), Math.round(this.attackdamage/22.5), Math.round(this.attackspeed*4), this.range],
                     backgroundColor: ['green', 'orange', 'purple', 'red', 'yellow', 'blue']
                 }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y:{
+                        ticks: {
+                            beginAtZero: true,
+                            display: false,
+                            stepSize: 1,
+                        },
+                        gridLines: {
+                            drawBorder: false,
+                        },
+                        grid: {
+                            tickLength: 0,
+                        }
+                    }
+                }
             }
         })
     }

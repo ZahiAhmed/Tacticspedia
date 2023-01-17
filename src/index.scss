@@ -26,8 +26,7 @@ body {
 
 .info {
     margin-left: 30px;
-    width: 500px;
-    max-width: 500px;
+    max-width: 450px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
     font: menu;
 }
@@ -68,3 +67,12 @@ body {
     visibility: hidden;
 }
 
+#info-chart{
+    margin: 5px;
+}
+
+.drop{
+    height: 30px;
+    border: 1px solid purple;
+    background-color: hotpink
+}
