@@ -22,7 +22,9 @@ class Sidebar {
             "Supers",
             "Star Guardian",
             "Threat",
-            "Underground"
+            "Underground",
+            "admin",
+            "mech prime"
         ],
             legendary: [
             "Arsenal",
@@ -45,12 +47,17 @@ class Sidebar {
             "Sureshot"
         ]}
         this.appendDivs();
+        
+    }
+    handleSearch(e){
+        e.preventDefault();
+        this.listIcons(this.search.value.toLowerCase());
     }
 
     appendDivs(){
         this.traits.forEach(trait => {
             const div = document.createElement('div');
-            this.appendLabel(div, trait);
+            this.appendH3(div, trait);
             this.appendImg(div, trait);
             this.appendDesc(div, trait);
             if(this.synergies.origins.includes(trait.name)) this.divs.origins.append(div);
@@ -59,9 +66,9 @@ class Sidebar {
         })
     }
 
-    appendLabel(div, trait){
-        const label = document.createElement('label');
-        label.innerText = `${trait.name}`
+    appendH3(div, trait){
+        const label = document.createElement('h3');
+        label.innerHTML = `${trait.name}`
         div.append(label);
     }
 

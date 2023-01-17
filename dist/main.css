@@ -142,7 +142,8 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 20%;
+  min-width: 350px;
+  width: 350px;
   position: fixed;
   z-index: 2px;
   top: 0;
@@ -166,6 +167,15 @@ body {
   background-color: rgba(173, 51, 173, 0.658);
   font-weight: 1000;
   font-size: large;
+  color: goldenrod;
+}
+
+.sidebar h3 {
+  border: 1px solid blue;
+  background-color: rgba(173, 51, 173, 0.658);
+  font-weight: 1000;
+  font-size: large;
+  color: goldenrod;
 }
 
 .sidebar h2 {
@@ -184,6 +194,7 @@ body {
   transform: scale(0.9);
   height: 120%;
   border: 1px solid purple;
+  display: table;
 }
 
 .sidebar #header {
