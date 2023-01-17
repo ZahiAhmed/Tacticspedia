@@ -6,12 +6,12 @@ h1 {
   padding: 20px;
 }
 
-.sidebar img {
+.scrollbar img {
   margin: 5px;
   padding: 1px;
 }
 
-.sidebar img:hover {
+.scrollbar img:hover {
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 

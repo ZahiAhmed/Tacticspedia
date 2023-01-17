@@ -1,7 +1,7 @@
 import Unit from './unit';
 import Icon from './icon';
 
-class Sidebar{
+class ScrollBar{
     constructor(units){
         this.units = units
         this.ele = document.querySelector("#champ_list")
@@ -42,4 +42,4 @@ class Sidebar{
     }
 }
 
-export default Sidebar;
+export default ScrollBar;

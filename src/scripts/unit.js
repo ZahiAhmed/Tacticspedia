@@ -36,7 +36,6 @@ class Unit{
     }
 
     printGraph(canvas){
-        debugger
         if (canvas.chart) canvas.chart.destroy();
         canvas.chart = new Chart(canvas.getContext('2d'), {
             type: 'bar',
