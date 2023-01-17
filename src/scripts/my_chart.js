@@ -105,6 +105,14 @@ class MyChart{
             options: {
                 indexAxis: 'y',
                 scales: {
+                    x:{
+                        ticks:{
+                            display: false,
+                        },
+                        grid: {
+                            tickLength: 0,
+                        }
+                    },
                     y:{
                         gridLines: {
                             drawBorder: false,
