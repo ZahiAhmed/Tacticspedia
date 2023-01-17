@@ -174,8 +174,6 @@ class MyChart{
         });
     }
 
-
-
     sort(stat,n){
         if (stat === "HP") this.sortbyHP(n);
         if (stat === "Armor") this.sortbyArmor(n);
@@ -221,7 +219,6 @@ class MyChart{
     }
 
     sortbyRange(n=1){
-        
         this.champs = this.champs.sort(function(x,y) {
             if (x.range < y.range) return 1*n;
             return -1*n;

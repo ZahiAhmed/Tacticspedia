@@ -36,13 +36,18 @@ class Unit{
     }
 
     printGraph(canvas){
+        debugger
         if (canvas.chart) canvas.chart.destroy();
         canvas.chart = new Chart(canvas.getContext('2d'), {
             type: 'bar',
             data: {
                 labels: ["HP", "Armor", "MR", "AD", "AS", "Range"],
                 datasets: [{
-                    data: [Math.round(this.hp/334.25), Math.round(this.armor/17.5), Math.round(this.magicresist/17.5), Math.round(this.attackdamage/22.5), Math.round(this.attackspeed*4), this.range],
+                    data: [Math.round(10*this.hp/334.25)/10, 
+                        Math.round(10*this.armor/17.5)/10,
+                        Math.round(10*this.magicresist/17.5)/10, 
+                        Math.round(10*this.attackdamage/22.5)/10, 
+                        Math.round(10*this.attackspeed*4)/10, this.range],
                     backgroundColor: ['green', 'orange', 'purple', 'red', 'yellow', 'blue']
                 }]
             },
@@ -57,7 +62,7 @@ class Unit{
                         ticks: {
                             beginAtZero: true,
                             display: false,
-                            stepSize: 1,
+                            stepSize: 4
                         },
                         gridLines: {
                             drawBorder: false,

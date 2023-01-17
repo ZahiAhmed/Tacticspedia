@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(function (data) {
         const units = data.sets[8].champions.slice(0,-4);
+        const traits = data.sets[8].traits;
         console.log(data);
-        const champList = new Sidebar(units);
-        const statsChart = new MyChart(units);
+        new Sidebar(units);
+        new MyChart(units);
     })
 })
 
