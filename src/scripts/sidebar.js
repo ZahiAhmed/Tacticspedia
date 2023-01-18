@@ -7,7 +7,7 @@ class Sidebar {
             if(x.name < y.name) return -1;
             return 1;
         })
-
+        this.ele = document.getElementById('traits-bar')
         this.makeChamps();
         this.divs = {origins: document.querySelector('#origins'), classes: document.querySelector('#classes'), legendary: document.querySelector('#legendary')};
         this.synergies = { 
@@ -46,10 +46,28 @@ class Sidebar {
         ],
         }
         this.appendDivs();
+        
         this.search = document.getElementById("searchTrait");
         this.handleSearch = this.handleSearch.bind(this);
         this.search.addEventListener("keyup", this.handleSearch)
+
+        this.toggleButton = document.getElementById('show-hide-traits');
+        this.togglePanel = this.togglePanel.bind(this);
+        this.toggleButton.addEventListener('click', this.togglePanel);
+
     }
+
+    togglePanel(e){
+        e.preventDefault();
+        if (this.ele.style.width === '' || this.ele.style.width === '0px') {
+            this.ele.style.width = "350px";
+            this.toggleButton.innerText = "Hide Traits";
+        } else{
+            this.ele.style.width = "0";
+            this.toggleButton.innerText = "Show Traits";
+        }
+    }
+
     handleSearch(e){
         e.preventDefault();
         this.divs.origins.innerHTML = "<h2>Origins</h2>";

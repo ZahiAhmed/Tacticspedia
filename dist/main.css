@@ -118,6 +118,7 @@ body {
 }
 
 #chart {
+  padding-right: 10%;
   max-width: 800px;
   visibility: hidden;
 }
@@ -137,15 +138,13 @@ body {
 }
 
 .stats-chart {
-  padding-left: 15%;
+  padding-left: 20%;
 }
 
 .sidebar {
   height: 100%;
-  min-width: 350px;
-  width: 350px;
+  width: 0;
   position: fixed;
-  z-index: 2px;
   top: 0;
   right: 0;
   overflow-x: hidden;
@@ -155,6 +154,20 @@ body {
   font: menu;
   background-color: plum;
   box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#show-hide-btn {
+  display: flex;
+  justify-content: center;
+}
+
+#show-hide-traits {
+  width: 200px;
+  height: 30px;
+  border: 1px solid purple;
+  background-color: hotpink;
+  font-weight: bolder;
+  font-size: medium;
 }
 
 .sidebar p {
@@ -201,6 +214,9 @@ body {
   padding-bottom: 5%;
   color: cornflowerblue;
   font-size: larger;
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 10px;
 }
 
 .sidebar img {
@@ -213,4 +229,22 @@ body {
   height: 30px;
   margin-bottom: 5px;
   border: 1px solid purple;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#toggle-chart-button {
+  visibility: hidden;
+  height: 30px;
+  border: 1px solid purple;
+  background-color: hotpink;
+  margin-left: 10px;
+}
+
+.btn {
+  height: 25px;
+  border: 1px solid purple;
+  background-color: hotpink;
+  cursor: pointer;
 }

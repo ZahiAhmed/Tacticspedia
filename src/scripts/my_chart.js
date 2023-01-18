@@ -1,41 +1,61 @@
 import Unit from './unit';
 import Icon from './icon';
 import Chart from 'chart.js/auto'
-
 class MyChart{
     constructor(units){
+        this.counter = 1;
         this.units = units;
         this.filterChamps();
         this.ele = document.getElementById('chart');
         this.showChart();
         this.sortbutton = document.querySelector("#sort-button");
-        this.dropdown = document.querySelector("#dropdown")
-        this.costdropdown = document.querySelector("#cost-dropdown");
         this.handleSort = this.handleSort.bind(this);
+        this.sortbutton.addEventListener('click', this.handleSort);
+        
+        this.dropdown = document.querySelector("#dropdown")
         this.handleDropdown = this.handleDropdown.bind(this);
-        this.handleCost = this.handleCost.bind(this);
-        this.sortbutton.addEventListener('change', this.handleSort);
         this.dropdown.addEventListener('change', this.handleDropdown);
+        
+        this.costdropdown = document.querySelector("#cost-dropdown");
+        this.handleCost = this.handleCost.bind(this);
         this.costdropdown.addEventListener('change', this.handleCost);
+        
+        this.toggleChartButton = document.getElementById('toggle-chart-button');
+        this.toggleChart = this.toggleChart.bind(this);
+        this.toggleChartButton.addEventListener('click', this.toggleChart);
+    }
+
+    toggleChart(e) {
+        e.preventDefault();
+        if (this.ele.style.visibility === "visible") {
+            this.ele.style.visibility = "hidden";
+            this.toggleChartButton.innerText = "Show"
+        } else {
+            this.ele.style.visibility = "visible";
+            this.toggleChartButton.innerText = "Hide"
+        }
     }
 
     handleSort(e){
         e.preventDefault();
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value, parseInt(this.sortbutton.options[this.sortbutton.selectedIndex].value))
+        this.counter*= -1;
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value)
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
     }
 
     handleCost(e){
         e.preventDefault();
         this.filterChamps([parseInt(this.costdropdown.options[this.costdropdown.selectedIndex].value)]);
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value, parseInt(this.sortbutton.options[this.sortbutton.selectedIndex].value));
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
     }
 
     handleDropdown(e){
         e.preventDefault();
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value, parseInt(this.sortbutton.options[this.sortbutton.selectedIndex].value));
+        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
         this.ele.style.visibility = "visible";
+        this.toggleChartButton.style.visibility = "visible";
+        this.toggleChartButton.innerText = "Hide";
         this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value)
     }
 
@@ -76,6 +96,14 @@ class MyChart{
         this.chart = new Chart(this.ele.getContext('2d'), {
             type: 'bar',
             plugins: [{
+                beforeUpdate: function(chart) {
+                    if (stat === "HP") chart.data.datasets[0].backgroundColor = 'green';
+                    if (stat === "Armor") chart.data.datasets[0].backgroundColor = 'orange';
+                    if (stat === "Magic Resist") chart.data.datasets[0].backgroundColor = 'purple';
+                    if (stat === "Attack Damage") chart.data.datasets[0].backgroundColor = 'red';
+                    if (stat === "Attack Speed") chart.data.datasets[0].backgroundColor = 'yellow';
+                    if (stat === "Attack Range") chart.data.datasets[0].backgroundColor = 'blue';
+                },
                 afterDraw: function(chart) {
                     const ctx = chart.ctx;
                     const xAxis = chart.scales.x;
@@ -85,7 +113,6 @@ class MyChart{
                         const y = yAxis.getPixelForTick(index);
                         const width = 35;
                         const height = 35;
-                        // debugger
                         ctx.drawImage(labels.icons[index], x-50, y-18, width, height);
                     });
                 }
@@ -95,11 +122,10 @@ class MyChart{
                 datasets:[{
                     label: stat,
                     categoryPercentage: 1,
-                    hoverBackgroundColor: 'red',
+                    hoverBackgroundColor: 'hotpink',
                     hoverBorderColor: 'goldenrod',
                     borderWidth: 5,
                     data: this.data,
-                    backgroundColor: ['blue', 'orange','yellow', 'green', 'purple']
                 }]    
             },
             options: {
@@ -174,13 +200,13 @@ class MyChart{
         });
     }
 
-    sort(stat,n){
-        if (stat === "HP") this.sortbyHP(n);
-        if (stat === "Armor") this.sortbyArmor(n);
-        if (stat === "Magic Resist") this.sortbyMR(n);
-        if (stat === "Attack Damage") this.sortbyAD(n);
-        if (stat === "Attack Speed") this.sortbyAS(n);
-        if (stat === "Attack Range") this.sortbyRange(n);
+    sort(stat){
+        if (stat === "HP") this.sortbyHP(this.counter);
+        if (stat === "Armor") this.sortbyArmor(this.counter);
+        if (stat === "Magic Resist") this.sortbyMR(this.counter);
+        if (stat === "Attack Damage") this.sortbyAD(this.counter);
+        if (stat === "Attack Speed") this.sortbyAS(this.counter);
+        if (stat === "Attack Range") this.sortbyRange(this.counter);
     }
 
     sortbyHP(n=1){

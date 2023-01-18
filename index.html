@@ -14,7 +14,11 @@
     <div id="tab_bar"></div>
     <div id="monsters">
     <h2>Monsters Attack</h2>
-  </div>
+    </div>
+    <div id="show-hide-btn">
+      <button id="show-hide-traits" class="btn">Show Traits</button>
+    </div>
+    <br>
     <div class="container">
       <div class="scrollbar">
         <input class="search" id="searchChamp" type="search" placeholder="Search Unit">
@@ -49,10 +53,10 @@
     </div>
     <div id="traits-bar" class="sidebar">
       <div id="header">
-      <h1>Traits/Synergies</h1>
-      <br>
-      <br>
-      <input id="searchTrait" type="search" placeholder="Search Trait">
+        <h1>Traits/Synergies</h1>
+        <br>
+        <br>
+        <input id="searchTrait" type="search" placeholder="Search Trait">
     </div>
       <div id="origins"><h2>Origins</h2></div>
       <div id="classes"><h2>Classes</h2></div>
@@ -89,10 +93,8 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
-      <select name="order" id="sort-button" class="drop">
-        <option value="1" selected>⇊</option>
-        <option value="-1">⇈</option>
-      </select>
+      <button id="sort-button" class="btn">⮁</select>
+      <button id="toggle-chart-button" class="btn"></button>
       <br>
       <br>
       <canvas class="chart" id="chart"></canvas>
