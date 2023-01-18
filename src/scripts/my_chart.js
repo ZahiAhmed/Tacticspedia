@@ -99,7 +99,7 @@ class MyChart{
                     hoverBorderColor: 'goldenrod',
                     borderWidth: 5,
                     data: this.data,
-                    backgroundColor: 'blue',
+                    backgroundColor: ['blue', 'orange','yellow', 'green', 'purple']
                 }]    
             },
             options: {

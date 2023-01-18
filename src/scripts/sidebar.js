@@ -45,8 +45,6 @@ class Sidebar {
                 "Forecaster"
         ],
         }
-        this.allSyn = this.synergies.origins.concat(this.synergies.classes, this.synergies.legendary)
-        console.log(this.allSyn);
         this.appendDivs();
         this.search = document.getElementById("searchTrait");
         this.handleSearch = this.handleSearch.bind(this);
