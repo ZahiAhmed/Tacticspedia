@@ -111,8 +111,8 @@ class MyChart{
                     yAxis.ticks.forEach((value, index) => {
                         const x = xAxis.left;
                         const y = yAxis.getPixelForTick(index);
-                        const width = 35;
-                        const height = 35;
+                        const width = 40;
+                        const height = 40;
                         ctx.drawImage(labels.icons[index], x-50, y-18, width, height);
                     });
                 }

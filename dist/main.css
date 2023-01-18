@@ -55,7 +55,9 @@ body {
 
 #monsters {
   text-align: center;
-  background-color: rgb(218, 32, 97);
+  background-color: cornflowerblue;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #monsters h2 {
@@ -63,6 +65,9 @@ body {
   font-weight: bolder;
   color: goldenrod;
   padding-right: 15%;
+  background-color: rgb(218, 32, 97);
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #tab_bar {
