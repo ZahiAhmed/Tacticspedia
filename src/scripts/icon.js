@@ -1,6 +1,7 @@
 class Icon {
     constructor(champ, width, height) {
         this.champ = champ;
+        this.span = document.createElement('span');
         this.ele = document.createElement("img");
         this.handleClick = this.handleClick.bind(this);
         this.ele.addEventListener('click', this.handleClick);
@@ -13,6 +14,9 @@ class Icon {
         }
         this.ele.setAttribute('width', `${width}`)
         this.ele.setAttribute('height', `${height}`);
+        this.span.append(this.ele);
+
+
     }
 
     handleClick(e) {

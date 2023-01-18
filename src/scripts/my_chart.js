@@ -1,13 +1,20 @@
 import Unit from './unit';
 import Icon from './icon';
 import Chart from 'chart.js/auto'
+
 class MyChart{
     constructor(units){
         this.counter = 1;
         this.units = units;
         this.filterChamps();
+       
         this.ele = document.getElementById('chart');
+        
+        this.outerdiv = document.querySelector('.stats-chart')
+        this.defaultHeight = `${this.outerdiv.offsetHeight}px`;
+       
         this.showChart();
+        
         this.sortbutton = document.querySelector("#sort-button");
         this.handleSort = this.handleSort.bind(this);
         this.sortbutton.addEventListener('click', this.handleSort);
@@ -29,10 +36,15 @@ class MyChart{
         e.preventDefault();
         if (this.ele.style.visibility === "visible") {
             this.ele.style.visibility = "hidden";
+            this.chart.destroy();
+            this.outerdiv.style.height = this.defaultHeight;
             this.toggleChartButton.innerText = "Show"
+            this.outerdiv.style.height = '';
         } else {
             this.ele.style.visibility = "visible";
             this.toggleChartButton.innerText = "Hide"
+            this.filterChamps([parseInt(this.costdropdown.options[this.costdropdown.selectedIndex].value)]);
+            this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
         }
     }
 
@@ -91,7 +103,8 @@ class MyChart{
         if (stat === "Attack Damage") this.adChart();
         if (stat === "Attack Speed") this.asChart();
         if (stat === "Attack Range") this.rangeChart();
-        const labels = this.makeLabels();
+        let labels = this.makeLabels();
+        if (!stat) labels.names = [];
         this.ele.height = labels.names.length *15;
         this.chart = new Chart(this.ele.getContext('2d'), {
             type: 'bar',
@@ -155,6 +168,7 @@ class MyChart{
                 },
             }
         });
+        this.height = this.ele.style.height;
     }
 
 

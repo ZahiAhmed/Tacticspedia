@@ -2,8 +2,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 #tab_bar {
-  border: 4px solid purple;
+  border: 1px solid blue;
   padding: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .scrollbar img {
@@ -41,23 +43,58 @@
   height: 30px;
   margin-bottom: 5px;
   border: 1px solid purple;
+  border-radius: 10px;
+}
+
+#tab_bar > h1 {
+  border: 1px solid blue;
+  padding: 2%;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgba(173, 51, 173, 0.658);
+  border-radius: 10px;
 }
 
 body {
   background-color: thistle;
+  background-image: url("https://media.altchar.com/prod/images/gm_article_promo_image/fbbeb5c8b70f-set-8-star-guardian-classroom-arena.jpg");
+}
+
+#top-content {
+  background-color: cornflowerblue;
+  width: 80%;
+  padding-right: -20%;
+  padding-bottom: 5%;
+  margin: 5%;
+  border: 1px solid blue;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+body > div:last-of-type {
+  background-color: cornflowerblue;
+  width: 80%;
+  height: 90%;
+  margin: 5%;
+  margin-top: -2%;
+  border: 1px solid blue;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  padding-right: 15%;
+  padding-right: 3%;
 }
 
 #monsters {
+  width: 113%;
   text-align: center;
-  background-color: cornflowerblue;
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 20px;
   margin-top: 20px;
+  margin-left: 2%;
 }
 
 #monsters h2 {
@@ -65,23 +102,28 @@ body {
   font-weight: bolder;
   color: goldenrod;
   padding-right: 15%;
-  background-color: rgb(218, 32, 97);
+  background-color: rgba(173, 51, 173, 0.658);
   margin-top: 5px;
   margin-bottom: 5px;
+  border: 1px solid blue;
+  width: 70%;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 #tab_bar {
-  color: rgb(205, 176, 11);
+  color: goldenrod;
   background-color: cornflowerblue;
 }
 
 .champs {
-  border: 1px solid purple;
+  border: 1px solid blue;
   width: 360px;
   height: 600px;
   overflow: scroll;
   overflow-x: hidden;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: thistle;
 }
 
 .info {
@@ -89,6 +131,8 @@ body {
   max-width: 500px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   font: menu;
+  background-color: thistle;
+  height: 664px;
 }
 
 .info img {
@@ -111,6 +155,7 @@ body {
 .stats-container {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 0;
 }
 
 #ability {
@@ -134,8 +179,9 @@ body {
 
 .drop {
   height: 30px;
-  border: 1px solid purple;
-  background-color: hotpink;
+  border: 1px solid blue;
+  background-color: plum;
+  border-radius: 10px;
 }
 
 .drop:hover {
@@ -143,7 +189,7 @@ body {
 }
 
 .stats-chart {
-  padding-left: 20%;
+  padding-left: 5%;
 }
 
 .sidebar {
@@ -170,7 +216,7 @@ body {
   width: 200px;
   height: 30px;
   border: 1px solid purple;
-  background-color: hotpink;
+  background-color: plum;
   font-weight: bolder;
   font-size: medium;
 }
@@ -237,19 +283,22 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  border-radius: 10px;
 }
 
 #toggle-chart-button {
   visibility: hidden;
   height: 30px;
   border: 1px solid purple;
-  background-color: hotpink;
+  background-color: plum;
   margin-left: 10px;
 }
 
 .btn {
   height: 25px;
   border: 1px solid purple;
-  background-color: hotpink;
+  background-color: plum;
   cursor: pointer;
+  position: static;
+  border-radius: 10px;
 }

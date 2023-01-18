@@ -37,7 +37,7 @@ class ScrollBar{
         });
         for(let i = 0; i<this.champs.length; i++) {
             const unitIcon = new Icon(this.champs[i], 50, 50);
-            this.ele.append(unitIcon.ele);
+            this.ele.append(unitIcon.span);
         }
     }
 }

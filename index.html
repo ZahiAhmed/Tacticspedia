@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Project Name</title>
+    <title>Teamfight Tactics: Aa</title>
   </head>
 
   <body>
     <div id="tab_bar"></div>
-    <div id="monsters">
+    <div id="top-content">
+    <div id="monsters" class="top-header">
       <h2>Teamfight Tactics: Set 8</h2>
       <h2>Monsters Attack</h2>
     </div>
@@ -49,8 +50,9 @@
           <p id="mana"></p>
           <p id="ability-desc"></p>
         </div>
-        <canvas id="info-graph" width="500" height="150"></canvas>
+        <canvas id="info-graph" width="500" height="144"></canvas>
       </div>
+    </div>
     </div>
     <div id="traits-bar" class="sidebar">
       <div id="header">
@@ -75,6 +77,10 @@
     <br>
     <br>
     <br>
+    <div class="outer-stat-chart">
+    <div id="monsters" class="bot-header">
+    <h2>Sort Units by Stat and Cost</h2>
+    </div>
     <div class="stats-chart">
       <select name="Stat" id="dropdown" class="drop">
         <option selected disabled>Choose a Stat</option>
@@ -100,5 +106,7 @@
       <br>
       <canvas class="chart" id="chart"></canvas>
     </div>
+    </div>
   </body>
 </html>
+
