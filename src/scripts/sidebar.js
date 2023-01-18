@@ -10,6 +10,7 @@ class Sidebar {
 
         this.makeChamps();
         this.divs = {origins: document.querySelector('#origins'), classes: document.querySelector('#classes'), legendary: document.querySelector('#legendary')};
+
         this.synergies = { 
             origins: [
             "A.D.M.I.N.", 
@@ -47,11 +48,13 @@ class Sidebar {
             "Sureshot"
         ]}
         this.appendDivs();
-        
+        this.search = document.getElementById("searchTrait");
+        this.handleSearch = this.handleSearch.bind(this);
+        this.search.addEventListener("keyup", this.handleSearch)
     }
     handleSearch(e){
         e.preventDefault();
-        this.listIcons(this.search.value.toLowerCase());
+        // this.search.value.toLowerCase()
     }
 
     appendDivs(){
@@ -99,7 +102,7 @@ class Sidebar {
             }
         }
         this.champs.sort((x,y) => {
-            if(x.cost < y.cost) return -1;
+            if (x.cost < y.cost) return -1;
             return 1;
         });
     }

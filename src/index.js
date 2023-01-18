@@ -12,13 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(function (response) {
         return response.json();
     })
+
     .then(function (data) {
         const units = data.sets[8].champions.slice(0,-4);
         const traits = data.sets[8].traits;
-        console.log(traits);
+        console.log(data);
         new ScrollBar(units);
         new MyChart(units);
-        new Sidebar(traits, units); // make sidebar
+        new Sidebar(traits, units);
     })
 })
 
