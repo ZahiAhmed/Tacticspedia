@@ -10,7 +10,6 @@ class Sidebar {
 
         this.makeChamps();
         this.divs = {origins: document.querySelector('#origins'), classes: document.querySelector('#classes'), legendary: document.querySelector('#legendary')};
-
         this.synergies = { 
             origins: [
             "A.D.M.I.N.", 
@@ -24,13 +23,6 @@ class Sidebar {
             "Star Guardian",
             "Threat",
             "Underground",
-            "admin",
-            "mech prime"
-        ],
-            legendary: [
-            "Arsenal",
-            "Corrupted",
-            "Forecaster"
         ],
             classes: [
             "Ace",
@@ -46,7 +38,15 @@ class Sidebar {
             "Renegade",
             "Spellslinger",
             "Sureshot"
-        ]}
+        ],
+            legendary: [
+                "Arsenal",
+                "Corrupted",
+                "Forecaster"
+        ],
+        }
+        this.allSyn = this.synergies.origins.concat(this.synergies.classes, this.synergies.legendary)
+        console.log(this.allSyn);
         this.appendDivs();
         this.search = document.getElementById("searchTrait");
         this.handleSearch = this.handleSearch.bind(this);
@@ -54,18 +54,21 @@ class Sidebar {
     }
     handleSearch(e){
         e.preventDefault();
-        // this.search.value.toLowerCase()
+        this.divs.origins.innerHTML = "<h2>Origins</h2>";
+        this.divs.classes.innerHTML = "<h2>Classes</h2>";
+        this.divs.legendary.innerHTML = "<h2>Legendary</h2>";
+        this.appendDivs(this.search.value.toLowerCase());
     }
 
-    appendDivs(){
+    appendDivs(str=""){
         this.traits.forEach(trait => {
             const div = document.createElement('div');
             this.appendH3(div, trait);
             this.appendImg(div, trait);
             this.appendDesc(div, trait);
-            if(this.synergies.origins.includes(trait.name)) this.divs.origins.append(div);
-            if(this.synergies.classes.includes(trait.name)) this.divs.classes.append(div);
-            if(this.synergies.legendary.includes(trait.name)) this.divs.legendary.append(div);
+            if(this.synergies.origins.includes(trait.name) && trait.name.toLowerCase().includes(str)) this.divs.origins.append(div);
+            if(this.synergies.classes.includes(trait.name) && trait.name.toLowerCase().includes(str)) this.divs.classes.append(div);
+            if(this.synergies.legendary.includes(trait.name) && trait.name.toLowerCase().includes(str)) this.divs.legendary.append(div);
         })
     }
 
