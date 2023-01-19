@@ -48,6 +48,11 @@
 
 #tooltips a {
   margin-left: 10px;
+  margin-top: -1%;
+}
+
+#tooltips a:hover {
+  opacity: 0.6;
 }
 
 #tooltips div {
@@ -77,6 +82,11 @@
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   color: purple;
   text-shadow: 0px 0 0px;
+  font-size: smaller;
+}
+
+#how-to span {
+  left: -25%;
 }
 
 .tooltip:hover span {
@@ -117,6 +127,7 @@ h3 {
 body {
   background-color: thistle;
   background-image: url("https://media.altchar.com/prod/images/gm_article_promo_image/fbbeb5c8b70f-set-8-star-guardian-classroom-arena.jpg");
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 #top-content {
@@ -145,6 +156,7 @@ body > div:last-of-type {
   display: flex;
   justify-content: center;
   padding-right: 3%;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 #monsters {
@@ -194,6 +206,7 @@ body > div:last-of-type {
   font: menu;
   background-color: thistle;
   height: 664px;
+  font-family: "Concert One";
 }
 
 .info img {
@@ -266,6 +279,7 @@ body > div:last-of-type {
   font: menu;
   background-color: plum;
   box-shadow: 4px 4px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .trait > div {
