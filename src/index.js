@@ -1,11 +1,7 @@
-import Example from './scripts/example';
 import ScrollBar from './scripts/scrollbar';
 import MyChart from './scripts/my_chart';
 import Sidebar from './scripts/sidebar'
-
 document.addEventListener("DOMContentLoaded", () => {
-    const root = document.querySelector('#tab_bar');
-    new Example(root);
     fetch(
         "https://raw.communitydragon.org/13.1/cdragon/tft/en_us.json"   
     )

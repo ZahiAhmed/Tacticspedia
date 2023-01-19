@@ -60,7 +60,7 @@ class Sidebar {
     togglePanel(e){
         e.preventDefault();
         if (this.ele.style.width === '' || this.ele.style.width === '0px') {
-            this.ele.style.width = "350px";
+            this.ele.style.width = "400px";
             this.toggleButton.innerText = "Hide Traits";
         } else{
             this.ele.style.width = "0";
@@ -79,6 +79,7 @@ class Sidebar {
     appendDivs(str=""){
         this.traits.forEach(trait => {
             const div = document.createElement('div');
+            div.setAttribute('id', `${trait.name}`);
             this.appendH3(div, trait);
             this.appendImg(div, trait);
             this.appendDesc(div, trait);
@@ -99,7 +100,7 @@ class Sidebar {
         this.champs.forEach(champ => {
             if (champ.traits.includes(trait.name)){
                 const icon = new Icon(champ, 35, 35);
-                p.append(icon.ele);
+                p.append(icon.span);
             };
         })
         div.append(p);

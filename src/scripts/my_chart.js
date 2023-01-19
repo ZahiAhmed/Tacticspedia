@@ -51,15 +51,17 @@ class MyChart{
     handleSort(e){
         e.preventDefault();
         this.counter*= -1;
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value)
-        this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
+        if (this.toggleChartButton.innerText === "Hide") {
+            this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
+        }
     }
 
     handleCost(e){
         e.preventDefault();
         this.filterChamps([parseInt(this.costdropdown.options[this.costdropdown.selectedIndex].value)]);
-        this.sort(this.dropdown.options[this.dropdown.selectedIndex].value);
-        this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
+        if (this.toggleChartButton.innerText === "Hide") {
+            this.showChart(this.dropdown.options[this.dropdown.selectedIndex].value);
+        }
     }
 
     handleDropdown(e){
@@ -96,6 +98,7 @@ class MyChart{
     }
 
     showChart(stat){
+        this.sort(stat);
         if (this.chart) this.chart.destroy();
         if (stat === "HP") this.hpChart();
         if (stat === "Armor") this.armorChart();
@@ -159,10 +162,12 @@ class MyChart{
                         ticks:{
                             maxTicksLimit: 59,
                             autoSkip: false,
-                            padding: 30
+                            padding: 30,
+                            color: 'black'
                         },
                         grid: {
-                            tickLength: 30
+                            tickLength: 50,
+                            padding: 100
                         }
                     },
                 },

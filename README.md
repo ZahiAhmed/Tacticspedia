@@ -28,14 +28,3 @@ This project will be implementing
 - Wednesday - Allow for grid to update statistics dynamically as units are put on it.
 - Thursday - Polish and push to git up and present.
 
-
-
-- edit favicon maybe
-- add fonts from google fonts
-- remove random comments
-- about me links (github, linkedin)
-- make hovers on icons for names 
-- maybe add a onchange event listener to search
-- maybe add better bakground
-- mess with pink css again
-

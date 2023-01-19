@@ -8,11 +8,23 @@
     <link rel="shortcut icon" type="images/png" href="favicon_base-16x16.png">
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
-    <title>Teamfight Tactics: Aa</title>
+    <title>Tacticspedia</title>
   </head>
 
   <body>
-    <div id="tab_bar"></div>
+    <div id="tab_bar">
+      <h1>Tacticspedia</h1>
+      <div id="tooltips">
+        <a href="https://github.com/ZahiAhmed"><img src="" alt="null"></a>
+        <a href="https://www.linkedin.com/in/zahiahmed/"><img src="" alt="null"></a>
+        <div class="tooltip">About Me
+          <span>sdfsds dfsdf sdf djhfsd hgff sdfgsd sdf  sdf  sdf  sdf</span>
+        </div>
+        <div class="tooltip">What is this?
+          <span> dfdf </span>
+        </div>
+      </div>
+    </div>
     <div id="top-content">
     <div id="monsters" class="top-header">
       <h2>Teamfight Tactics: Set 8</h2>
@@ -62,9 +74,9 @@
         <br>
         <input id="searchTrait" type="search" placeholder="Search Trait">
     </div>
-      <div id="origins"><h2>Origins</h2></div>
-      <div id="classes"><h2>Classes</h2></div>
-      <div id="legendary"><h2>Legendary</h2></div>
+      <div id="origins" class="trait"><h2>Origins</h2></div>
+      <div id="classes" class="trait"><h2>Classes</h2></div>
+      <div id="legendary" class="trait"><h2>Legendary</h2></div>
       <br>
       <br>
       <br>
@@ -105,9 +117,11 @@
       <button id="toggle-chart-button" class="btn"></button>
       <br>
       <br>
-      <canvas class="chart" id="chart"></canvas>
+      <canvas class="chart" id="chart" width="400"></canvas>
     </div>
     </div>
   </body>
+
+  <tr></tr>
 </html>
 

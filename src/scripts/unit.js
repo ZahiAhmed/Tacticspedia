@@ -2,8 +2,7 @@ import Chart from 'chart.js/auto'
 
 class Unit{
     constructor(data){
-        this.ability = data.ability; //abilities have variables & icon too
-        // this.parseAbility();
+        this.ability = data.ability;
         this.cost = data.cost;
         this.icon = `${data.icon.slice(31,-3)}png`;
         this.name = data.name;
@@ -17,12 +16,12 @@ class Unit{
         this.range = data.stats.range;
         this.traits = data.traits;
     }
+
     printData(){
         document.querySelector(`#splash`).innerHTML = `<img class="cost${this.cost}" src="https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-champion/${this.icon}">`;
         document.querySelector(`#name`).innerText = `${this.name}`;
         document.querySelector(`#ability`).innerText = `${this.ability.name}`;
         document.querySelector(`#ability-desc`).innerText = `${this.ability.desc}`;
-        document.querySelector(`#traits`).innerText = `${this.traits.join(", ")}`;
         document.querySelector('#hp').innerText = `HP: ${this.hp}`;
         document.querySelector('#armor').innerText = `Armor: ${this.armor}`;
         document.querySelector(`#magic_resist`).innerText = `Magic Resist: ${this.magicresist}`;
@@ -32,6 +31,26 @@ class Unit{
         document.querySelector(`#range`).innerText = `Attack Range: ${this.range}`;
         document.querySelector(`#cost`).innerText = `Cost: ${this.cost}`;
         this.printGraph(document.querySelector('#info-graph'));
+        this.printTraits(document.querySelector('#traits'));
+    }
+
+    printTraits(ele){
+        ele.innerHTML = "";
+        this.traits.forEach(trait => {
+            const a = document.createElement('a');
+            a.setAttribute('href', `#${trait}`)
+            a.addEventListener('click',()=>{
+                const sidebar = document.getElementById('traits-bar');
+                const button = document.getElementById('show-hide-traits');
+                sidebar.style.width = '400px';
+                button.innerText = 'Hide Traits';
+                sidebar.addEventListener("transitionend", function( event ) { 
+                    window.location.href = a.getAttribute('href');
+                }, false);
+            });
+            a.innerText = `${trait}`;
+            ele.append(a);
+        })
     }
 
     printGraph(canvas){
@@ -89,20 +108,6 @@ class Unit{
             }
         })
     }
-
-    // parseAbility(){
-    //     const desc = this.ability.desc.split("@");
-    //     const values = this.ability.variables;
-    //     desc.forEach(str => {
-    //         debugger
-    //         str = str.split("*");
-    //         for(let i = 0; i<values.length; i++) {
-    //             if(str[0] === values[i].name || str[0]==='Modified'+values[i].name)
-    //                 str = values[i].value.join("/");
-    //         }
-    //     });
-    //     console.log(desc.join(""));
-    // }
 
 }
 export default Unit;
