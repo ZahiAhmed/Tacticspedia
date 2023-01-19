@@ -91,6 +91,15 @@ class Unit{
                     }
                 },
                 scales: {
+                    x:{
+                        ticks: {
+                            color: 'black',
+                            font: {
+                                family: "'Montserrat Alternates', sans-serif",
+                                weight: "bolder"
+                            }
+                        }
+                    },
                     y:{
                         ticks: {
                             beginAtZero: true,

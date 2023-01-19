@@ -1,6 +1,7 @@
 import Unit from './unit';
 import Icon from './icon';
 import Chart from 'chart.js/auto'
+import { beginHiddenCallStack } from '@babel/core/lib/errors/rewrite-stack-trace';
 
 class MyChart{
     constructor(units){
@@ -145,6 +146,17 @@ class MyChart{
                 }]    
             },
             options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'black',
+                            font: {
+                                family: "'Montserrat Alternates', sans-serif",
+                                weight: "bolder"                            
+                            }
+                        }
+                    }
+                },
                 indexAxis: 'y',
                 scales: {
                     x:{
@@ -163,7 +175,11 @@ class MyChart{
                             maxTicksLimit: 59,
                             autoSkip: false,
                             padding: 30,
-                            color: 'black'
+                            color: 'black',
+                            font: {
+                                family: "'Montserrat Alternates', sans-serif",
+                                weight: "bolder"
+                            }
                         },
                         grid: {
                             tickLength: 50,
