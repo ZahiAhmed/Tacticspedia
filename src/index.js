@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(function (data) {
         const units = data.sets[8].champions.slice(0,-4);
         const traits = data.sets[8].traits;
-        console.log(data);
         new ScrollBar(units);
         new MyChart(units);
         new Sidebar(traits, units);

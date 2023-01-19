@@ -91,7 +91,7 @@ class Sidebar {
 
     appendH3(div, trait){
         const label = document.createElement('h3');
-        label.innerHTML = `${trait.name}`
+        label.innerHTML = `<img src="https://raw.communitydragon.org/13.1/game/assets/ux/traiticons/trait_icon_8_${trait.name.toLowerCase()}.png" width="15px" height="15px"> ${trait.name}`
         div.append(label);
     }
 
