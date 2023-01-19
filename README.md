@@ -39,3 +39,7 @@ This project will be implementing
 - Wednesday - Style everything and make everything look nice, add minor functionalities I might find interesting.
 - Thursday - Polish and push to git up and present.
 
+
+## Future Implementations: 
+- Add the items in the game and the augments (more information on the game)
+- Add an interactive board to help users theorycraft and strategize by creating their own teams to visualize what they look like.
