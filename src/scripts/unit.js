@@ -42,11 +42,14 @@ class Unit{
             a.addEventListener('click',()=>{
                 const sidebar = document.getElementById('traits-bar');
                 const button = document.getElementById('show-hide-traits');
-                sidebar.style.width = '400px';
-                button.innerText = 'Hide Traits';
+                const search = document.getElementById('searchTrait');
+                search.value = `${trait}`
+                search.dispatchEvent(new Event('input'));
                 sidebar.addEventListener("transitionend", function( event ) { 
                     window.location.href = a.getAttribute('href');
                 }, false);
+                sidebar.style.width = '400px';
+                button.innerText = 'Hide Traits';
             });
             a.innerText = `${trait}`;
             ele.append(a);

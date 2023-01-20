@@ -50,6 +50,7 @@ class Sidebar {
         this.search = document.getElementById("searchTrait");
         this.handleSearch = this.handleSearch.bind(this);
         this.search.addEventListener("keyup", this.handleSearch)
+        this.search.addEventListener("input", this.handleSearch)
 
         this.toggleButton = document.getElementById('show-hide-traits');
         this.togglePanel = this.togglePanel.bind(this);
