@@ -118,7 +118,7 @@ h3 {
 }
 
 #tab_bar {
-  border: 1px solid blue;
+  border: 1px ridge blue;
   padding: 20px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;

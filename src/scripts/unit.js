@@ -21,7 +21,7 @@ class Unit{
         document.querySelector(`#splash`).innerHTML = `<img class="cost${this.cost}" src="https://ddragon.leagueoflegends.com/cdn/13.1.1/img/tft-champion/${this.icon}">`;
         document.querySelector(`#name`).innerText = `${this.name}`;
         document.querySelector(`#ability`).innerText = `${this.ability.name}`;
-        document.querySelector(`#ability-desc`).innerText = `${this.ability.desc}`;
+        document.querySelector(`#ability-desc`).innerHTML = `${this.ability.desc}`;
         document.querySelector('#hp').innerText = `HP: ${this.hp}`;
         document.querySelector('#armor').innerText = `Armor: ${this.armor}`;
         document.querySelector(`#magic_resist`).innerText = `Magic Resist: ${this.magicresist}`;
