@@ -44,7 +44,7 @@ class Unit{
                 const button = document.getElementById('show-hide-traits');
                 const search = document.getElementById('searchTrait');
                 search.value = `${trait}`
-                search.dispatchEvent(new Event('input'));
+                search.dispatchEvent(new Event('keyup'));
                 sidebar.addEventListener("transitionend", function( event ) { 
                     window.location.href = a.getAttribute('href');
                 }, false);
