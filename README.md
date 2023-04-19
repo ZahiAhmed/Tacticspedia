@@ -1,3 +1,5 @@
++ [Live Link](https://zahiahmed.github.io/Tacticspedia/)
+
 # Tacticspedia
 - Tacticspedia is an interactive sheet of data that holds information for all the units of the new set in Riot Games Autobattler game TeamFight Tactics. The main page will include data from whichever unit you wish to see, from their traits, abilities and stats. Tacticspedia shows the user all the units in a scrollbar. From all these units, they can click one and all of that units'data will be displayed on the right. Along with this, there will be a chart that will prompt the user to click a listed stat, that will then display a chart of all the units ordered by that stat from either ascending or descending order and can be filtered by the units tier or cost. Each unit has a trait, each with special properties. Tacticspedia will show all the traits in the game and their information in a collapsable sidebar that can be searched through.
  
